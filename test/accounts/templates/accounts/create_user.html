@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}書籍の編集{% endblock title %}
+
+{% block content %}
+  <h3>ユーザの新規作成</h3>
+  <form action="{% url 'accounts:create_user' %}" method="post" role="form">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">送信</button>
+  </form>
+
+  <br>
+  <a href="{{ HTTP_HOST }}/login">ログイン</a>
+{% endblock content %}
